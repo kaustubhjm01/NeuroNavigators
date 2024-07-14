@@ -1,0 +1,70 @@
+<div class="container">
+  <h2 class="title">Habits</h2>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-4" *ngFor="let habit of defaultHabits">
+      <p-card header="{{ habit.name }}">
+        <ng-template pTemplate="content">
+          <p>{{ habit.description }}</p>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <button
+            pButton
+            type="button"
+            icon="pi pi-plus"
+            label="Add to Reminder"
+            (click)="addHabitToReminder(habit)"
+          ></button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+  <button
+    pButton
+    type="button"
+    label="Create New Habit"
+    icon="pi pi-plus"
+    class="create-habit-button"
+    (click)="openCreateHabitDialog()"
+  ></button>
+</div>
+
+<p-dialog
+  header="Create New Habit"
+  [(visible)]="display"
+  [modal]="true"
+  [closable]="false"
+  [responsive]="true"
+  [style]="{ width: '300px' }"
+>
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="name">Habit Name</label>
+      <input id="name" type="text" pInputText [(ngModel)]="newHabit.name" />
+    </div>
+    <div class="p-field">
+      <label for="description">Description</label>
+      <input
+        id="description"
+        type="text"
+        pInputText
+        [(ngModel)]="newHabit.description"
+      />
+    </div>
+  </div>
+  <p-footer>
+    <button
+      pButton
+      type="button"
+      label="Cancel"
+      icon="pi pi-times"
+      (click)="onCancelClick()"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Save"
+      icon="pi pi-check"
+      (click)="onSaveClick()"
+    ></button>
+  </p-footer>
+</p-dialog>

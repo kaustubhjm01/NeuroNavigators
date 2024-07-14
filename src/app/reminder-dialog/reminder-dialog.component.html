@@ -1,0 +1,41 @@
+<p-dialog
+  header="Add Medicine Reminder"
+  [(visible)]="display"
+  [modal]="true"
+  [closable]="false"
+  [responsive]="true"
+  [style]="{ width: '300px' }"
+>
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="name">Medicine Name</label>
+      <input id="name" type="text" pInputText [(ngModel)]="data.name" />
+    </div>
+    <div class="p-field">
+      <label for="time">Time</label>
+      <input
+        id="time"
+        type="text"
+        pInputText
+        [(ngModel)]="data.time"
+        placeholder="HH:MM AM/PM"
+      />
+    </div>
+  </div>
+  <p-footer>
+    <button
+      pButton
+      type="button"
+      label="Cancel"
+      icon="pi pi-times"
+      (click)="onNoClick()"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Save"
+      icon="pi pi-check"
+      (click)="onSaveClick()"
+    ></button>
+  </p-footer>
+</p-dialog>

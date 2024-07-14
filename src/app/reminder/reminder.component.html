@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="title">Medicine Reminders</h2>
+  <button
+    pButton
+    type="button"
+    label="Add Reminder"
+    icon="pi pi-plus"
+    class="add-reminder-button"
+    (click)="openAddReminderDialog()"
+  ></button>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-4" *ngFor="let reminder of reminders">
+      <p-card
+        header="{{ reminder.name }}"
+        subheader="Time: {{ reminder.time }}"
+      >
+        <ng-template pTemplate="footer">
+          <button
+            pButton
+            type="button"
+            icon="pi pi-trash"
+            class="p-button-danger"
+            (click)="removeReminder(reminder)"
+          ></button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>

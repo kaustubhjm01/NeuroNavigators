@@ -1,0 +1,9 @@
+<p>chatbot works!</p>
+<!-- chatbot.component.html -->
+<div class="chatbot-container">
+  <input [(ngModel)]="userMessage" placeholder="Ask me anything..." />
+  <button (click)="sendMessage()">Send</button>
+  <div *ngIf="botResponse">
+    <p>Bot: {{ botResponse }}</p>
+  </div>
+</div>
