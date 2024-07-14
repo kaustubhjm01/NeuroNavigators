@@ -19,22 +19,29 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@babel/generator": "7.22.5",
+    "@babel/parser": "7.22.5",
+    "@babel/traverse": "7.22.5",
     "@material/dialog": "^14.0.0",
+    "@zxing/ngx-scanner": "^18.0.1",
+    "face-api.js": "^0.22.2",
     "ngx-webcam": "^0.4.1",
     "primeflex": "^3.3.1",
     "primeng": "^17.18.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "webcam-easy": "^1.1.1",
-    "zone.js": "~0.13.0",
-    "@babel/generator": "7.22.5",
-    "@babel/parser": "7.22.5",
-    "@babel/traverse": "7.22.5"
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.1",
     "@angular/cli": "~16.2.1",
     "@angular/compiler-cli": "^16.2.0",
+    "@babel/core": "^7.24.8",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-typescript": "^7.24.7",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -43,8 +50,5 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.1.3"
-  },
-  "overrides": {
-  "@babel/traverse": "7.22.6"
-}
+  }
 }
