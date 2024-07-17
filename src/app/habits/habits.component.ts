@@ -22,10 +22,14 @@ export class HabitsComponent implements OnInit {
 
   ngOnInit(): void {
     this.defaultHabits = [
-      { name: 'Exercise', description: 'Daily morning exercise', selectedTime: null },
-      { name: 'Read', description: 'Read a book for 30 minutes', selectedTime: null },
-      { name: 'Meditate', description: 'Meditate for 15 minutes', selectedTime: null },
-      { name: 'Workout', description: 'Go to Workout for 30 minutes', selectedTime: null }
+      { name: 'Exercise', description: 'Daily morning exercise', selectedTime: null, selectedDate : null , selectedDateTime : null },
+      { name: 'Read', description: 'Read a book for 30 minutes', selectedTime: null,selectedDate : null , selectedDateTime : null },
+      { name: 'Meditate', description: 'Meditate for 15 minutes', selectedTime: null,
+        selectedDate : null , selectedDateTime: null 
+       },
+      { name: 'Workout', description: 'Go to Workout for 30 minutes', selectedTime: null,
+        selectedDate : null , selectedDateTime : null
+       }
     ];
     this.reminders = this.reminderService.getReminders();
   }
@@ -39,15 +43,35 @@ export class HabitsComponent implements OnInit {
       this.autoClearMessages();
       return;
     }
+    const reminderDate = habit.selectedDateTime.toDateString();
+    const reminderTime = habit.selectedDateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
 
-    if (!habit.selectedTime) {
-      console.log('not valid ')
-      this.messageService.add({severity: 'warn', summary: 'Time Required', detail: 'Please select a time for the habit.'});
-      this.autoClearMessages();
-      return;
+    console.log(habit.selectedDateTime)
+
+    // if (habit.selectedDateTime) {
+    //   console.log('not valid ')
+    //   this.messageService.add({severity: 'warn', summary: 'Time Required', detail: 'Please select a time for the habit.'});
+    //   this.autoClearMessages();
+    //   return;
+    // }
+
+    // const reminderDate = habit.selectedDateTime.toDateString();
+    // const reminderTime = habit.selectedDateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+
+    const reminder = {
+      name : habit.name,
+      time : reminderTime,
+      description: habit.description,
+      date : reminderDate
     }
 
-    const reminder = { name: habit.name, time: habit.selectedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }), decription : habit.description };
+    // const reminder = { name: habit.name, dateTime: habit.selectedDateTime.toISOString(), description: habit.description };
+    
+  //   const reminder = { name: habit.name, time: habit.selectedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }), decription : habit.description 
+  // , date : habit.selectedDate
+  // };
+
+
     this.reminderService.addReminder(reminder);
     this.messageService.add({severity:'success', summary:'Reminder Added', detail:'Reminder has been added successfully.'});
     this.autoClearMessages();

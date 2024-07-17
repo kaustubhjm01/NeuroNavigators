@@ -18,11 +18,12 @@
           <ng-template pTemplate="content">
             <p>{{ habit.description }}</p>
             <label for="icon" class="mr-2">Select Date and Time</label>
-            <p-calendar 
+            <!-- <p-calendar 
             
             [(ngModel)]="habit.selectedTime" [showTime]="true" hourFormat="12">
           
-          </p-calendar>
+          </p-calendar> -->
+          <p-calendar [(ngModel)]="habit.selectedDateTime" [showTime]="true" dateFormat="yy-mm-dd" hourFormat="12" placeholder="Select Date and Time"></p-calendar>
           
           </ng-template>
           
@@ -68,11 +69,26 @@
       <div class="p-field">
         <label for="time">Time</label>
 
-        <p-calendar 
+        <p-calendar [(ngModel)]="newHabit.selectedDateTime" [showTime]="true" dateFormat="yy-mm-dd" hourFormat="12" placeholder="Select Date and Time"></p-calendar>
+
+
+        <!-- <p-calendar 
             
-            [(ngModel)]="newHabit.selectedTime" [showTime]="true" hourFormat="12">
+            [(ngModel)]="newHabit.selectedTime" [showTime]="true" hourFormat="12"
+            
+            >
           
           </p-calendar>
+        <p-calendar 
+            
+            
+            [(ngModel)]="newHabit.selectedDate" dateFormat="yy-mm-dd" placeholder="Select Date"
+            >
+          
+          </p-calendar> -->
+
+
+
       <!-- <input
         id="time"
         type="datetime"

@@ -124,7 +124,9 @@ import { CalendarModule } from 'primeng/calendar';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { SafePipe } from './pipes/safepipe';
-
+import { FullCalendarModule } from '@fullcalendar/angular'; // import FullCalendarModule
+// import { ScheduleModule } from 'primeng/schedule';
+// import ScheduleMod
 @NgModule({
   declarations: [
     AppComponent,
@@ -143,6 +145,8 @@ import { SafePipe } from './pipes/safepipe';
     // VideoComponent
   ],
   imports: [
+    // ScheduleModule,
+    FullCalendarModule,
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
