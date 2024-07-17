@@ -125,6 +125,7 @@ import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { SafePipe } from './pipes/safepipe';
 import { FullCalendarModule } from '@fullcalendar/angular'; // import FullCalendarModule
+import { VoiceRecognitionService } from './voice-recognition.service';
 // import { ScheduleModule } from 'primeng/schedule';
 // import ScheduleMod
 @NgModule({
@@ -168,7 +169,7 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // import FullCalend
     PhotosComponent,  // Import the standalone component
     VideoComponent    // Import the standalone component
   ],
-  providers: [ReminderService, MessageService, HabitsComponent],
+  providers: [ReminderService, MessageService, HabitsComponent, VoiceRecognitionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

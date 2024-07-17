@@ -1,6 +1,70 @@
-<div class="container col-12 ">
+<div class="container col-12 flex  ">
   <h2 *ngIf="reminders.length ==0 " > No Reminders to show </h2>
-  <h2 *ngIf="reminders.length > 0 " class="title">Your  Reminders</h2>
+
+  <div>
+    <h2 *ngIf="todayReminders.length > 0 " class="title">Today's  Reminders</h2>
+    <div class="flex col-12 flex-column scroll-height  " [ngClass]="{'scrollable': todayReminders.length >= 3}">
+      <div class="p-col-12 p-md-6 p-lg-4" *ngFor="let reminder of todayReminders">
+        <p-card
+          header="{{ reminder.name }}"
+          subheader="Time: {{ reminder.time }}"
+        >
+        {{reminder.description}}
+          <ng-template pTemplate="footer">
+            <button
+              pButton
+              type="button"
+              icon="pi pi-trash"
+              class="p-button-danger mr-2 "
+              (click)="removeReminder(reminder)"
+            ></button>
+            <button
+              pButton
+              type="button"
+              icon="pi pi-check"
+              label="Done"
+              class="p-button-success mr-2 "
+              [disabled]="!isReminderDue(reminder) || reminder.done"
+              (click)="markAsDone(reminder)"
+            ></button>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2 *ngIf="upcomingReminders.length > 0 " class="title">Upcoming Reminders</h2>
+    <div class="flex col-12 flex-column scroll-height  " [ngClass]="{'scrollable': upcomingReminders.length >= 3}">
+      <div class="p-col-12 p-md-6 p-lg-4" *ngFor="let reminder of upcomingReminders">
+        <p-card
+          header="{{ reminder.name }}"
+          subheader="Time: {{ reminder.time }}"
+        >
+        {{reminder.description}}
+          <ng-template pTemplate="footer">
+            <button
+              pButton
+              type="button"
+              icon="pi pi-trash"
+              class="p-button-danger mr-2 "
+              (click)="removeReminder(reminder)"
+            ></button>
+            <button
+              pButton
+              type="button"
+              icon="pi pi-check"
+              label="Done"
+              class="p-button-success mr-2 "
+              [disabled]="!isReminderDue(reminder) || reminder.done"
+              (click)="markAsDone(reminder)"
+            ></button>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </div>
+  
   <!-- <button
     pButton
     type="button"
@@ -9,7 +73,7 @@
     class="add-reminder-button"
     (click)="openAddReminderDialog()"
   ></button> -->
-  <div class="flex col-12 ">
+  <div class="flex col-12 flex-column scroll-height  " [ngClass]="{'scrollable': todayReminders.length >= 3}">
     <div class="p-col-12 p-md-6 p-lg-4" *ngFor="let reminder of reminders">
       <p-card
         header="{{ reminder.name }}"

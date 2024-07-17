@@ -1,9 +1,31 @@
 <p>chatbot works!</p>
 <!-- chatbot.component.html -->
-<div class="chatbot-container">
+<!-- <div class="chatbot-container">
   <input [(ngModel)]="userMessage" placeholder="Ask me anything..." />
   <button (click)="sendMessage()">Send</button>
   <div *ngIf="botResponse">
     <p>Bot: {{ botResponse }}</p>
   </div>
+</div> -->
+
+<!-- <div class="voice-command">
+  <button (click)="startListening()">Start Listening</button>
+  <button (click)="stopListening()">Stop Listening</button>
+</div> -->
+
+<!-- <div class="voice-command-container">
+  <button (click)="startVoiceRecognition()" [disabled]="listening">
+    {{ listening ? 'Listening...' : 'Start Voice Command' }}
+  </button>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+</div> -->
+
+<div class="voice-command">
+  <button (click)="startVoiceRecognition()">Start Listening</button>
+
+  <button (click)="startVoiceRecognition()" [disabled]="listening">
+    {{ listening ? 'Listening...' : 'Start Voice Command' }}
+  </button>
+  <button (click)="stopListening()">Stop Listening</button>
 </div>
+

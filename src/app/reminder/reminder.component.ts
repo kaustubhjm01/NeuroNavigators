@@ -19,7 +19,8 @@ interface Activity {
 })
 export class ReminderComponent implements OnInit {
   reminders :any  = [];
-
+  todayReminders : any = []
+  upcomingReminders  : any = []
   constructor(private reminderService: ReminderService, public dialog: MatDialog
 , private habits : HabitsComponent
 
@@ -28,8 +29,22 @@ export class ReminderComponent implements OnInit {
 
   ngOnInit() {
     this.reminders = this.reminderService.getReminders();
+    this.categorizeReminders();
     this.reminderService.scheduleReminders();
   }
+
+  categorizeReminders() {
+    const today = new Date().toDateString();
+
+    this.todayReminders = this.reminders.filter(reminder => {
+      return new Date(reminder.date).toDateString() === today;
+    });
+
+    this.upcomingReminders = this.reminders.filter(reminder => {
+      return new Date(reminder.date).toDateString() !== today;
+    });
+  }
+
 
   openAddReminderDialog(): void {
     const dialogRef = this.dialog.open(ReminderDialogComponent, {
@@ -41,6 +56,8 @@ export class ReminderComponent implements OnInit {
       if (result) {
         this.reminderService.addReminder(result);
         this.reminders = this.reminderService.getReminders();
+        this.categorizeReminders();
+
       }
     });
   }
@@ -61,6 +78,7 @@ export class ReminderComponent implements OnInit {
     //   }
     // }
     this.reminders = this.reminderService.getReminders();
+    this.categorizeReminders();
   }
 
   markAsDone(reminder): void {

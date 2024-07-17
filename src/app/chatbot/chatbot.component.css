@@ -15,3 +15,31 @@
     padding: 10px 20px;
   }
   
+  .voice-command {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .voice-command button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .voice-command-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }

@@ -3,7 +3,14 @@
 .content-display {
     text-align: center;
     margin: 20px;
+
+    /* background: #EDECED;
+background: linear-gradient(135deg, #EDECED, #8D7ED1); */
   }
+  /* .body{
+    background: #EDECED;
+background: linear-gradient(135deg, #EDECED, #8D7ED1);
+  } */
 /* .header{
   col
 } */
