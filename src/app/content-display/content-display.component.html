@@ -1,5 +1,37 @@
-<p>content-display works!</p>
+<!-- <p>content-display works!</p> -->
+<div class="p-grid p-justify-center">
+  <h1 class="font-medium text-orange-500">Real-Time Mood Detection</h1>
+</div>
+
+<div class="col-12 flex justify-content-around">
+  <app-webcam (moodEvent)="updateContent($event)"></app-webcam>
+  <app-reminder></app-reminder>
+</div>
+
+<!-- <div class="container">
+  <app-reminder></app-reminder>
+</div> -->
+
+<!-- <app-reminder></app-reminder> -->
 <div class="content-display">
-  <h2>Your Mood: {{ mood }}</h2>
-  <p>{{ content }}</p>
+  <!-- <h2>Your Mood: {{ mood }}</h2> -->
+  <p class="font-semibold font-italic text-3xl text-indigo-500">
+    {{ content }}
+  </p>
+<!-- <app-reminder></app-reminder> -->
+
+  <!-- <button (click)="toggleMusicPlayer()">Toggle Music Player</button> -->
+</div>
+
+<div *ngIf="showMusicPlayer">
+  <app-music></app-music>
+</div>
+<div *ngIf="showPhotos">
+  <app-photos [photos]="photos"></app-photos>
+</div>
+<div *ngIf="showMeditationVideos">
+  <app-video [type]="true"></app-video>
+</div>
+<div *ngIf="showMotivationalVideos">
+  <app-video [type]="false"> </app-video>
 </div>

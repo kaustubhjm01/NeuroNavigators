@@ -1,0 +1,18 @@
+
+<div class="mt-5 flex flex-column">
+  <h2 class="text-cyan-800 m-auto mb-5">Photos of Loved Ones</h2>
+  <p-carousel [value]="photos"  
+  [numVisible]="3" 
+  [numScroll]="2" >
+    <ng-template pTemplate="item" let-photo>
+      <img class="mr-5" [src]="photo" alt="Loved one photo" 
+      style="width: 100%;height: auto; "
+      class="carousel-image mr-5 "
+      >
+    </ng-template>
+  </p-carousel>
+</div>
+
+    
+
+

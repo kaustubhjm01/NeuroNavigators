@@ -1,0 +1,25 @@
+.photos-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .photos-grid img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+  }
+
+  :host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .carousel-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Maintains aspect ratio and fills the container */
+  }

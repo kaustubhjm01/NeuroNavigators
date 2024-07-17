@@ -1,0 +1,49 @@
+<!-- <p>video works!</p>
+<h2>{{ title }}</h2> -->
+<!-- <button (click)="play()">Play</button>
+    <button (click)="stop()">Stop</button> -->
+      <!-- <video #videoPlayer width="600" controls>
+        <source [src]="videoUrl" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div>
+        <p-button label="Stop Video" icon="pi pi-stop" (onClick)="stop()"></p-button>
+      </div> -->
+<!-- {{type}} -->
+      <div *ngIf="type===true"></div>
+      <p-carousel [value]="meditationVideos"  
+    [numVisible]="3" 
+    [numScroll]="3" >
+      <ng-template pTemplate="item" let-video>
+        <span> {{video.title}}</span>
+        <!-- <video #videoPlayer width="400" controls>
+            <source [src]="video.url" type="video/mp4">
+            Your browser does not support the video tag.
+          </video> -->
+        
+          <iframe
+    [src]="getEmbedUrl(video.url) | safe"
+    width="560"
+    height="315"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+      </ng-template>
+    </p-carousel>
+
+
+      <div *ngIf="type==false">
+      <p-carousel [value]="motivaionalVideos"  
+    [numVisible]="3" 
+    [numScroll]="3" >
+      <ng-template pTemplate="item" let-video>
+        <span> video.title</span>
+        <video #videoPlayer width="600" controls>
+            <source [src]="video.url" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+       
+      </ng-template>
+    </p-carousel>
+  </div>

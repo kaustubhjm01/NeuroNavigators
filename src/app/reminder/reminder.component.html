@@ -1,4 +1,49 @@
-<div class="container">
+<div class="container col-12 ">
+  <h2 *ngIf="reminders.length ==0 " > No Reminders to show </h2>
+  <h2 *ngIf="reminders.length > 0 " class="title">Your  Reminders</h2>
+  <!-- <button
+    pButton
+    type="button"
+    label="Add Reminder"
+    icon="pi pi-plus"
+    class="add-reminder-button"
+    (click)="openAddReminderDialog()"
+  ></button> -->
+  <div class="flex col-12 ">
+    <div class="p-col-12 p-md-6 p-lg-4" *ngFor="let reminder of reminders">
+      <p-card
+        header="{{ reminder.name }}"
+        subheader="Time: {{ reminder.time }}"
+      >
+      {{reminder.description}}
+        <ng-template pTemplate="footer">
+          <button
+            pButton
+            type="button"
+            icon="pi pi-trash"
+            class="p-button-danger mr-2 "
+            (click)="removeReminder(reminder)"
+          ></button>
+          <button
+            pButton
+            type="button"
+            icon="pi pi-check"
+            label="Done"
+            class="p-button-success mr-2 "
+            [disabled]="!isReminderDue(reminder) || reminder.done"
+            (click)="markAsDone(reminder)"
+          ></button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- old code  -->
+
+<!-- <div class="container">
   <h2 class="title">Medicine Reminders</h2>
   <button
     pButton
@@ -26,4 +71,4 @@
       </p-card>
     </div>
   </div>
-</div>
+</div> -->
