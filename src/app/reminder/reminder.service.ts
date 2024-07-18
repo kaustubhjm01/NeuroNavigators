@@ -26,6 +26,7 @@ export class ReminderService {
 
   markReminderAsDone(reminder: any) {
     reminder.done = true;
+    
   }
   markReminderAsUnDone(reminder: any) {
     reminder.done = false;

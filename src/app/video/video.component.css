@@ -6,3 +6,9 @@
     width: 100%;
     max-width: 600px;
   }
+
+  .carousel-video{
+    border: 5px solid rgb(13, 3, 35); /* Border color and width */
+  border-radius: 10px; /* Optional: rounded corners */
+  padding: 5px; /* Optional: space between image and border */
+  }

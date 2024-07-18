@@ -1,38 +1,22 @@
-/* .ui-menubar-custom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-   */
-  /* Example custom styles */
-.ui-menubar-custom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background-color: #f0f0f0; /* Example background color */
-}
-
-.custom-menubar{
-  background-color: blue;
+.custom-menubar {
+  background-color: #060221; /* Background color */
   border: none;
 }
 
-.ui-menubar-custom img {
-  margin-right: 10px; /* Adjust margin as needed */
+.custom-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+  color: #060221 !important; /* Text color */
 }
 
-.p-menubar .p-menuitem-link{
-  background-color: blue;
-  color : white
-}
-.p-menubar .p-menuitem-link  :hover{
-  background-color: green;
-  color : white
-}
-/* component-name.component.css */
-.custom-menu-item {
-  background-color: #470303; /* Replace with your desired background color */
+.custom-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+  background-color: #5945a0 !important; /* Hover background color */
 }
 
+.custom-menubar .p-menubar-root-list {
+  display: flex;
+  align-items: center;
+}
 
+.ui-menubar-custom {
+  margin-left: auto;
+  padding-right: 1rem;
+}

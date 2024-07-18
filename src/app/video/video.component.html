@@ -1,6 +1,6 @@
 
       <div *ngIf="type===true"></div>
-      <p-carousel [value]="meditationVideos"  
+      <p-carousel [value]="videos"  
     [numVisible]="2" 
     [numScroll]="2" >
       <ng-template pTemplate="item" let-video>
@@ -13,10 +13,9 @@
           <div class="ml-10">
             <iframe
             [src]="getEmbedUrl(video.url) | safe"
-            width="600"
+            width="650"
             height="300"
-            
-            
+            class="carousel-video"
             frameborder="0"
             allowfullscreen>
           </iframe>
