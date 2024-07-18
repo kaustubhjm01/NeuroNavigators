@@ -17,28 +17,30 @@ import { SafePipe } from '../pipes/safepipe';
 })
 export class VideoComponent {
   @Input() type : boolean = false ;
-  motivaionalVideos = [
-    { url: 'https://www.youtube.com/watch?v=n8FB0gQKRgQ', title: 'How To Live Life To The Fullest' },
-    { url: 'https://www.youtube.com/watch?v=brjAjq4zEIE', title: '15-Minute Morning Yoga Full Body Stretch' }
-  ];
-  meditationVideos = [
+  // motivaionalVideos = [
+  //   { url: 'https://www.youtube.com/watch?v=n8FB0gQKRgQ', title: 'How To Live Life To The Fullest' },
+  //   { url: 'https://www.youtube.com/watch?v=brjAjq4zEIE', title: '15-Minute Morning Yoga Full Body Stretch' }
+  // ];
+  // meditationVideos = [
     
-    { url: 'https://www.youtube.com/watch?v=ijfLsKg8jFY', title: 'Om 108 Times - Music for Yoga & Meditation' },
-    { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Morning Flute Music' },
-    { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Krishna Flute' },
-    { url: 'https://www.youtube.com/watch?v=ijfLsKg8jFY', title: 'Om 108 Times - Music for Yoga & Meditation' },
-    { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Morning Flute Music' },
-    { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Krishna Flute' },
-    { url: 'https://www.youtube.com/watch?v=ijfLsKg8jFY', title: 'Om 108 Times - Music for Yoga & Meditation' },
-    { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Morning Flute Music' },
-    { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Krishna Flute' },
-    // { url: 'assets/video2.mp4', title: 'Meditation4 Video' }
-  ];
+  //   { url: 'https://www.youtube.com/watch?v=ijfLsKg8jFY', title: 'Om 108 Times - Music for Yoga & Meditation' },
+  //   { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Morning Flute Music' },
+  //   { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Krishna Flute' },
+  //   { url: 'https://www.youtube.com/watch?v=ijfLsKg8jFY', title: 'Om 108 Times - Music for Yoga & Meditation' },
+  //   { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Morning Flute Music' },
+  //   { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Krishna Flute' },
+  //   { url: 'https://www.youtube.com/watch?v=ijfLsKg8jFY', title: 'Om 108 Times - Music for Yoga & Meditation' },
+  //   { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Morning Flute Music' },
+  //   { url: 'https://www.youtube.com/watch?v=tF4z5kntXAA', title: 'Krishna Flute' },
+  //   // { url: 'assets/video2.mp4', title: 'Meditation4 Video' }
+  // ];
 
   // videoUrl: string = 'assets/sample-video.mp4'; // Replace with actual video URL
   videoUrl: string = 'https://www.youtube.com/watch?v=brjAjq4zEIE'; // Replace with actual video URL
   isVisible: boolean = false;
   title: string = 'Sample Video';
+
+  @Input() videos = []
 
 
   getEmbedUrl(url : string  ): string {

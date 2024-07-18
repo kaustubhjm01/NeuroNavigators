@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
       { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: '/home' , routerLinkActiveOptions: { exact: true } },
       { label: 'Reminders', icon: 'pi pi-fw pi-list', routerLink: '/reminders' },
       { label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: '/calendar' },
-      { label: 'Chatbot', icon: 'pi pi-fw pi-calendar', routerLink: '/chatbot' },
+      // { label: 'Chatbot', icon: 'pi pi-fw pi-calendar', routerLink: '/chatbot' },
     ];
   }
 }

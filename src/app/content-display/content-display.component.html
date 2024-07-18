@@ -1,16 +1,26 @@
 <!-- <p>content-display works!</p> -->
-<div class="p-grid p-justify-center">
-  <h1 class="font-large text-center  h1-class ">Real-Time Mood Detection</h1>
+<div class="flex">
+  <h1 class="font-large text-center  h1-class mr-auto ">Real-Time Mood Detection</h1>
+  <!-- <div class="top-50">
+    Current Score : {{currentScore}}
+  </div> -->
+  <h1 class="flex justify-content-end h1-class"> Current Score : {{currentScore}}</h1>
 </div>
+
+
 
 <div class="col-12 flex justify-content-around">
-  <app-webcam (moodEvent)="updateContent($event)"></app-webcam>
-  <app-reminder></app-reminder>
-</div>
 
-<div class="voice-command top-50 left-0 flex justify-content-end">
+  
+
+  <app-webcam (moodEvent)="updateContent($event)"></app-webcam>
+  <app-reminder  (updateScore)="updateScore($event)"></app-reminder>
   <app-chatbot> </app-chatbot>
 </div>
+
+<!-- <div class="voice-command top-50 left-0 flex justify-content-end">
+  
+</div> -->
 
 <!-- <div class="container">
   <app-reminder></app-reminder>
@@ -19,9 +29,9 @@
 <!-- <app-reminder></app-reminder> -->
 <div class="content-display">
   <!-- <h2>Your Mood: {{ mood }}</h2> -->
-  <p class="font-semibold h1-class text-3xl ">
-    {{ content }}
-  </p>
+  <p class="font-bold h1-class text-3xl ">
+    {{ content  }}
+  </p >
 <!-- <app-reminder></app-reminder> -->
 
   <!-- <button (click)="toggleMusicPlayer()">Toggle Music Player</button> -->
@@ -30,12 +40,13 @@
 <div *ngIf="showMusicPlayer">
   <app-music></app-music>
 </div>
-<div *ngIf="showPhotos">
+<!-- <div *ngIf="showPhotos"> -->
   <app-photos [photos]="photos"></app-photos>
-</div>
-<div *ngIf="showMeditationVideos">
-  <app-video [type]="true"></app-video>
-</div>
-<div *ngIf="showMotivationalVideos">
-  <app-video [type]="false"> </app-video>
-</div>
+<!-- </div> -->
+<!-- <div *ngIf="showMeditationVideos"> -->
+  <app-video [videos]="videos"></app-video>
+
+<!-- </div> -->
+<!-- <div *ngIf="showMotivationalVideos"> -->
+  <!-- <app-video [type]="false"> </app-video> -->
+<!-- </div> -->

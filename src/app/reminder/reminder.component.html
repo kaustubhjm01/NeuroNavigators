@@ -1,5 +1,16 @@
+<p-messages  [showTransitionOptions]="'500ms'" 
+[hideTransitionOptions]="'500ms'" 
+[(value)]="messages"
+></p-messages>
+
 <div class="container col-12 flex  ">
-  <h2 *ngIf="reminders.length ==0  "  class="h1-class"> No Reminders to show </h2>
+
+  <!-- <div class="top-10 left-80 ">
+    Current Score : {{currentScore}}
+  </div> -->
+
+  <h2 *ngIf="reminders.length ==0  "  class="h1-class"> No Reminders to Show!! Create one</h2>
+
 
   <div class="flex ">
     <div class="mr-6">

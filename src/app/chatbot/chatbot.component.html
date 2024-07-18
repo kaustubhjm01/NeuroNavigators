@@ -20,13 +20,23 @@
   <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 </div> -->
 
-<div class="voice-command top-50 fixed">
+<!-- <div class="voice-command top-50 fixed"> -->
+  <div class="border-2 border-primary h-10rem border-round-lg p-5" >
   <!-- <button (click)="startVoiceRecognition()">Start Listening</button> -->
 
-  <i class="pi pi-android" style="font-size: 2rem"></i>
-  <button (click)="startVoiceRecognition()" [disabled]="listening">
-    {{ listening ? 'Listening...' : 'Start Voice Command' }}
-  </button>
-  <button (click)="stopListening()">Stop Listening</button>
+  <div class="flex mb-3 ">
+    <i class="pi pi-android mr-4" style="font-size: 2rem"></i>
+    <span > Ask Chatbot...</span>
+  </div>
+  
+  <div class="flex justify-content-center p-2">
+    <button
+    class="mr-3 h-3rem w-7"
+    (click)="startVoiceRecognition() " [disabled]="listening">
+      {{ listening ? 'Listening...' : 'Start ' }}
+    </button>
+    <button class="mr-3 h-3rem w-7" (click)="stopListening()">Stop </button>
+  </div>
+  
 </div>
 

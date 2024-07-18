@@ -22,4 +22,8 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: cover; /* Maintains aspect ratio and fills the container */
+    /* border-color: blue; */
+    border: 5px solid rgb(13, 3, 35); /* Border color and width */
+  border-radius: 10px; /* Optional: rounded corners */
+  padding: 5px; /* Optional: space between image and border */
   }

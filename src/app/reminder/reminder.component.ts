@@ -1,11 +1,12 @@
 // reminder.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ReminderService } from './reminder.service';
 import { ReminderDialogComponent } from '../reminder-dialog/reminder-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { HabitsComponent } from '../habits/habits.component';
 import { defer } from 'rxjs';
+import { MessageService } from 'primeng/api';
 interface Activity {
   name: string;
   done: boolean;
@@ -20,6 +21,8 @@ interface Activity {
 export class ReminderComponent implements OnInit {
   reminders :any  = [];
   todayReminders : any = []
+  messages: any[] = []; 
+  @Output() updateScore = new EventEmitter<number>();
   // todayReminders : any =[
   //   {name: 'Exercise', time: '03:52 PM', description: 'Daily morning exercise', date: 'Thu Jul 18 2024'}
   //   ,
@@ -28,12 +31,13 @@ export class ReminderComponent implements OnInit {
   //   {name: 'Meditate', time: '03:52 PM', description: 'Meditate for 15 minutes', date: 'Thu Jul 18 2024'}
   //   ]
 
-  
+  currentScore =0;
   upcomingReminders  : any = []
   constructor(private reminderService: ReminderService, public dialog: MatDialog
-, private habits : HabitsComponent
+, private habits : HabitsComponent,
+private messageService: MessageService
 
-
+    
   ) {}
 
   ngOnInit() {
@@ -99,7 +103,12 @@ export class ReminderComponent implements OnInit {
   }
 
   markAsDone(reminder): void {
+    this.currentScore += 10;
+    this.messageService.add({severity:'success', summary:'Reminder Added', detail:'10 Points added to your score!! Way to go Champion'});
     this.reminderService.markReminderAsDone(reminder);
+
+    this.updateScore.emit(10)
+
   }
   isReminderDue(reminder: any): boolean {
     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
