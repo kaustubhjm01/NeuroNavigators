@@ -11,6 +11,7 @@ export class VoiceRecognitionService {
     const { webkitSpeechRecognition }: IWindow = <IWindow><unknown>window;
     this.recognition = new webkitSpeechRecognition();
     this.recognition.lang = 'en-US';
+    // this.recognition.lang = 'hi-IN';
     this.recognition.interimResults = false;
     this.recognition.maxAlternatives = 1;
 

@@ -5,9 +5,9 @@
 [(value)]="messages"
 ></p-messages>
 <div class="box">
-  <div class="container col-10   flex-wrap justify-content-start border-orange-500" >
+  <div class="container col-10  flex-wrap justify-content-start border-orange-500" >
 
-    <h2 class="title text-orange-600">Suggested Reminders for You!! </h2>
+    <h2 class="title header-text">Suggested Reminders for You!! </h2>
     <div class=" flex  col-8 ">
       <div class="col-5 custom-card mr-3 " *ngFor="let habit of defaultHabits">
         <p-card  class="col-3 " header="{{ habit.name }}"
@@ -29,6 +29,7 @@
           
           <ng-template pTemplate="footer">
             <button
+            class="button-box"
               pButton
               type="button"
               icon="pi pi-plus"
@@ -43,9 +44,10 @@
     <button
       pButton
       type="button"
+      class="button-box"
       label="Create New Reminder"
       icon="pi pi-plus"
-      class="create-habit-button"
+      class="create-habit-button button-box"
       (click)="openCreateHabitDialog()"
     ></button>
   
@@ -100,6 +102,7 @@
     </div>
     <p-footer>
       <button
+      class="button-box"
         pButton
         type="button"
         label="Cancel"
@@ -107,6 +110,7 @@
         (click)="onCancelClick()"
       ></button>
       <button
+      class="button-box"
         pButton
         type="button"
         label="Save"

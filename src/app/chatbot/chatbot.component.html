@@ -1,4 +1,4 @@
-<p>chatbot works!</p>
+
 <!-- chatbot.component.html -->
 <!-- <div class="chatbot-container">
   <input [(ngModel)]="userMessage" placeholder="Ask me anything..." />
@@ -20,9 +20,10 @@
   <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 </div> -->
 
-<div class="voice-command">
-  <button (click)="startVoiceRecognition()">Start Listening</button>
+<div class="voice-command top-50 fixed">
+  <!-- <button (click)="startVoiceRecognition()">Start Listening</button> -->
 
+  <i class="pi pi-android" style="font-size: 2rem"></i>
   <button (click)="startVoiceRecognition()" [disabled]="listening">
     {{ listening ? 'Listening...' : 'Start Voice Command' }}
   </button>

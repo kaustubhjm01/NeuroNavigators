@@ -1,4 +1,7 @@
-
+/* body{
+  background: #EDECED;
+background: linear-gradient(135deg, #EDECED, #8D7ED1);
+} */
 .container {
     max-width: 800px;
     min-width: 400px;
@@ -10,6 +13,15 @@
     max-width: 100vw;
     display: flex;
     justify-content: space-between;
+    /* background: #EDECED;
+    background: linear-gradient(135deg, #EDECED, #8D7ED1); */
+
+    /* background: rgb(252, 190, 252); */
+    /* background: rgb(119, 94, 119); */
+
+    /* background: rgb(190, 243, 252); */
+    /* background:#ececec; */
+    background:#e3e5e5;
   }
   
   .title {
@@ -22,7 +34,13 @@
     margin: 20px auto;
   }
   
+  .header-text{
+    color:#9c1f85; 
+  }
 
+  .button-box{
+    background-color: #9c1f85;
+  }
   .custom-card {
     /* max-width: 100vw; */
     border: 2px solid #8a2be2; /* Violet color */

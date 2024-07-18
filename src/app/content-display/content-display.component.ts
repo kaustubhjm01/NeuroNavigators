@@ -29,8 +29,9 @@ export class ContentDisplayComponent implements OnInit {
     // const mockImageData = {}; // Replace with actual image data
     // this.mood = this.moodDetectionService.detectMood(mockImageData);
     // this.mood = 'bored';
-    this.mood = mood;
-    // this.mood = 'angry'
+    // this.mood = mood;
+    this.mood = 'angry'
+    // this.mood = 'neutral'
     // if(mood ==='happy'){
     //   this.showMusicPlayer =true;
     // }

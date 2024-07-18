@@ -1,5 +1,9 @@
 
 /* content-display.component.css */
+
+.h1-class{
+  color: #220554;
+}
 .content-display {
     text-align: center;
     margin: 20px;

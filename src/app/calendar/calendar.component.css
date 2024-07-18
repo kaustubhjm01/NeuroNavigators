@@ -1,5 +1,12 @@
 /* Add any custom styles you need here */
 .container {
     margin: 20px;
+
+    background: #f8f4f4;
+
+/* background: rgb(190, 243, 252); */
+
+
+    /* background: linear-gradient(135deg, #EDECED, #8D7ED1); */
   }
   

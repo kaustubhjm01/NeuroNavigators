@@ -1,6 +1,38 @@
-.ui-menubar-custom {
+/* .ui-menubar-custom {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+   */
+  /* Example custom styles */
+.ui-menubar-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0; /* Example background color */
+}
+
+.custom-menubar{
+  background-color: blue;
+  border: none;
+}
+
+.ui-menubar-custom img {
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.p-menubar .p-menuitem-link{
+  background-color: blue;
+  color : white
+}
+.p-menubar .p-menuitem-link  :hover{
+  background-color: green;
+  color : white
+}
+/* component-name.component.css */
+.custom-menu-item {
+  background-color: #470303; /* Replace with your desired background color */
+}
+
+

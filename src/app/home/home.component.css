@@ -1,6 +1,41 @@
 .box{
     
-background: #EDECED;
-background: linear-gradient(135deg, #EDECED, #8D7ED1);
+/* background: #EDECED;
+background: linear-gradient(135deg, #EDECED, #8D7ED1); */
+
+/* background-color: #d2f4e5;
+opacity: 0.8;
+background: repeating-linear-gradient( 45deg, #e8fcec, #e8fcec 5px, #d2f4e5 5px, #d2f4e5 25px ); */
+
+/* background: rgb(190, 243, 252); */
+
+/* background: rgb(190, 243, 252); */
+
+background:#e3e5e5;
+
+/* background: radial-gradient(circle, rgb(200, 199, 233) 0%, rgba(67,177,203,1) 55%, rgba(105,224,227,1) 100%); */
+
+/* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+
+background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+
+background: linear-gradient(135deg, #141E30 0%, #243B55 100%);
+
+background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+
+background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+
+background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+
+background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%); */
+
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=8e89a7&c2=4f46d9&gt=l&gd=dtl
+*/
+/* background: #8E89A7;
+background: linear-gradient(135deg, #8E89A7, #4F46D9); */
 height: auto;
 }

@@ -21,3 +21,7 @@
 .scrollable {
   overflow-y: scroll;
 }
+
+.h1-class{
+  color: #e10429;
+}

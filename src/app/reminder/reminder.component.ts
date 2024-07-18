@@ -20,6 +20,15 @@ interface Activity {
 export class ReminderComponent implements OnInit {
   reminders :any  = [];
   todayReminders : any = []
+  // todayReminders : any =[
+  //   {name: 'Exercise', time: '03:52 PM', description: 'Daily morning exercise', date: 'Thu Jul 18 2024'}
+  //   ,
+  //   {name: 'Read', time: '03:52 PM', description: 'Read a book for 30 minutes', date: 'Thu Jul 18 2024'}
+  //  ,
+  //   {name: 'Meditate', time: '03:52 PM', description: 'Meditate for 15 minutes', date: 'Thu Jul 18 2024'}
+  //   ]
+
+  
   upcomingReminders  : any = []
   constructor(private reminderService: ReminderService, public dialog: MatDialog
 , private habits : HabitsComponent
@@ -39,6 +48,14 @@ export class ReminderComponent implements OnInit {
     this.todayReminders = this.reminders.filter(reminder => {
       return new Date(reminder.date).toDateString() === today;
     });
+
+    // this.todayReminders  =[
+    //   {name: 'Exercise', time: '03:52 PM', description: 'Daily morning exercise', date: 'Thu Jul 18 2024'}
+    //   ,
+    //   {name: 'Read', time: '03:52 PM', description: 'Read a book for 30 minutes', date: 'Thu Jul 18 2024'}
+    //  ,
+    //   {name: 'Meditate', time: '03:52 PM', description: 'Meditate for 15 minutes', date: 'Thu Jul 18 2024'}
+    //   ]
 
     this.upcomingReminders = this.reminders.filter(reminder => {
       return new Date(reminder.date).toDateString() !== today;
