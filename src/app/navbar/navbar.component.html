@@ -1,5 +1,51 @@
-<p-menubar [model]="items">
-  <div class="ui-menubar-custom">
+<p-menubar class="custom-menubar" [model]="items">
+
+  <!-- <ng-template pTemplate="item" let-item>
+    <ng-container *ngIf="item.route; else urlRef">
+        <a [routerLink]="item.route" class="p-menuitem-link">
+            <span [class]="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+        </a>
+    </ng-container>
+    <ng-template #urlRef>
+        <a *ngIf="item.url; else noLink" [href]="item.url" class="p-menuitem-link">
+            <span [class]="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+        </a>
+    </ng-template>
+    <ng-template #noLink>
+        <div class="p-menuitem-link">
+            <span [class]="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+            <span class="pi pi-fw pi-angle-down ml-2"></span>
+        </div>
+    </ng-template> -->
+<!-- </ng-template> -->
+
+
+  <!-- <ng-template pTemplate="item" let-item>
+
+
+  </ng-template> -->
+  <!-- <li *ngFor="let item of items"
+
+  class="p-menubar .p-menuitem-link "
+  >
+
+</li> -->
+  <!-- <div class="ui-menubar-custom">
     <img src="assets/logo.png" height="40" alt="Logo" />
-  </div>
+  </div> -->
 </p-menubar>
+
+<!-- 
+<ul class="navbar-items">
+  <li *ngFor="let item of items"
+      [routerLink]="item.routerLink"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="item.routerLinkActiveOptions"
+      class="navbar-item">
+    <i [ngClass]="item.icon"></i>
+    <span>{{ item.label }}</span>
+  </li>
+</ul> -->

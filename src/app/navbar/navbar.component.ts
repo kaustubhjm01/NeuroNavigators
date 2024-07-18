@@ -10,9 +10,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: '/home' },
-      { label: 'Habits', icon: 'pi pi-fw pi-list', routerLink: '/habits' },
+      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: '/home' , routerLinkActiveOptions: { exact: true } },
+      { label: 'Reminders', icon: 'pi pi-fw pi-list', routerLink: '/reminders' },
       { label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: '/calendar' },
+      { label: 'Chatbot', icon: 'pi pi-fw pi-calendar', routerLink: '/chatbot' },
     ];
   }
 }

@@ -1,0 +1,8 @@
+:host {
+    display: block;
+    margin: 20px;
+  }
+  video {
+    width: 100%;
+    max-width: 600px;
+  }

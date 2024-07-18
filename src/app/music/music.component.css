@@ -1,0 +1,38 @@
+/* .p-button .pi {
+    color: white !important;
+}
+
+pButton pi{
+    color: white !important;
+} */
+
+.audio-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.audio-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.audio-info {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.audio-info h4 {
+    margin: 0;
+}
+
+.audio-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Adjust styles as needed */

@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~primeflex/primeflex.css"; 
+
+body{
+    margin: 0; /* Optional: Removes default body margin */
+    padding: 0; /* Optional: Removes default body padding */
+    /* background: rgb(111,104,230);
+    background: radial-gradient(circle, rgba(111,104,230,1) 0%, rgba(67,177,203,1) 55%, rgba(105,224,227,1) 100%); */
+
+    background:#e3e5e5;
+}

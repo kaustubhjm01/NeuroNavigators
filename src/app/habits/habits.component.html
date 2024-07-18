@@ -1,4 +1,141 @@
-<div class="container">
+
+<!-- new code  -->
+<p-messages  [showTransitionOptions]="'500ms'" 
+[hideTransitionOptions]="'500ms'" 
+[(value)]="messages"
+></p-messages>
+<div class="box">
+  <div class="container col-10  flex-wrap justify-content-start border-orange-500" >
+
+    <h2 class="title header-text">Suggested Reminders for You!! </h2>
+    <div class=" flex  col-8 ">
+      <div class="col-5 custom-card mr-3 " *ngFor="let habit of defaultHabits">
+        <p-card  class="col-3 " header="{{ habit.name }}"
+
+        
+        >
+         
+          <ng-template pTemplate="content">
+            <p>{{ habit.description }}</p>
+            <label for="icon" class="mr-2">Select Date and Time</label>
+            <!-- <p-calendar 
+            
+            [(ngModel)]="habit.selectedTime" [showTime]="true" hourFormat="12">
+          
+          </p-calendar> -->
+          <p-calendar [(ngModel)]="habit.selectedDateTime" [showTime]="true" dateFormat="yy-mm-dd" hourFormat="12" placeholder="Select Date and Time"></p-calendar>
+          
+          </ng-template>
+          
+          <ng-template pTemplate="footer">
+            <button
+            class="button-box"
+              pButton
+              type="button"
+              icon="pi pi-plus"
+              label="Add to Reminder"
+              [disabled]="isHabitAdded(habit)"
+              (click)="addHabitToReminder(habit)"
+            ></button>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+    <button
+      pButton
+      type="button"
+      class="button-box"
+      label="Create New Reminder"
+      icon="pi pi-plus"
+      class="create-habit-button button-box"
+      (click)="openCreateHabitDialog()"
+    ></button>
+  
+    <p-dialog
+    header="Create New Reminder"
+    [(visible)]="display"
+    [modal]="true"
+    [closable]="false"
+    [responsive]="true"
+    [style]="{ width: '500px' , height:'700px'}"
+  >
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="name">Habit Name</label>
+        <input id="name" type="text" pInputText [(ngModel)]="newHabit.name" />
+      </div>
+      <div class="p-field">
+        <label for="description">Description</label>
+        <input id="description" type="text" pInputText [(ngModel)]="newHabit.description" />
+      </div>
+      <div class="p-field">
+        <label for="time">Time</label>
+
+        <p-calendar [(ngModel)]="newHabit.selectedDateTime" [showTime]="true" dateFormat="yy-mm-dd" hourFormat="12" placeholder="Select Date and Time"></p-calendar>
+
+
+        <!-- <p-calendar 
+            
+            [(ngModel)]="newHabit.selectedTime" [showTime]="true" hourFormat="12"
+            
+            >
+          
+          </p-calendar>
+        <p-calendar 
+            
+            
+            [(ngModel)]="newHabit.selectedDate" dateFormat="yy-mm-dd" placeholder="Select Date"
+            >
+          
+          </p-calendar> -->
+
+
+
+      <!-- <input
+        id="time"
+        type="datetime"
+        pInputText
+        [(ngModel)]="newHabit.time"
+        placeholder="HH:MM AM/PM"
+      /> -->
+      </div>
+    </div>
+    <p-footer>
+      <button
+      class="button-box"
+        pButton
+        type="button"
+        label="Cancel"
+        icon="pi pi-times"
+        (click)="onCancelClick()"
+      ></button>
+      <button
+      class="button-box"
+        pButton
+        type="button"
+        label="Save"
+        icon="pi pi-check"
+        (click)="addHabitToReminder(newHabit)"
+      ></button>
+    </p-footer>
+  </p-dialog>
+  </div>
+
+  <!-- <div class="container">
+    <app-reminder></app-reminder>
+  </div> -->
+
+</div>
+
+
+
+
+
+
+
+
+<!-- old code  -->
+<!-- <div class="container">
   <h2 class="title">Habits</h2>
   <div class="p-grid">
     <div class="p-col-12 p-md-6 p-lg-4" *ngFor="let habit of defaultHabits">
@@ -67,4 +204,4 @@
       (click)="onSaveClick()"
     ></button>
   </p-footer>
-</p-dialog>
+</p-dialog> -->

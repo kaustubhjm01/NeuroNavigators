@@ -1,0 +1,35 @@
+<!-- <p>music works!</p> -->
+<div class="col-6  flex flex-column m-auto h-auto 
+
+">
+<!-- border-2 border-indigo-700 -->
+
+<div class=" ml-auto col-10">
+ 
+
+  <div class="flex flex-column col-12 ">
+    <h2 class="text-cyan-800 ">Playing {{audioTitle}}...</h2>
+    <img [src]="thumbnailUrl" alt="Thumbnail" class="h-10rem w-5">
+
+    <!-- <audio #audioPlayer controls> -->
+      <audio class="h-4rem w-5" #audioPlayer controls >
+      <source src="assets/musics/onmywayMusic.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="flex mt-5">
+      <button pButton type="button" 
+      
+      icon="pi pi-play"  class="p-button p-button-primary w-2 h-2rem mr-2" (click)="play()">Play</button>
+    
+      <button pButton type="button" icon="pi pi-stop" class="p-button p-button-danger w-2 h-2rem" (click)="stop()">Stop</button>
+    </div>
+  </div>
+  
+
+  
+
+</div>
+   
+
+  </div>
