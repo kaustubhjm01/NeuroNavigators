@@ -1,18 +1,16 @@
-<!-- <p>webcam works!</p> -->
-<!-- <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
 
-
-<button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
-
-<div class="snapshot" *ngIf="webcamImage">
-  <h2>Take your image or get another</h2>
-  <img [src]="webcamImage.imageAsDataUrl"/>
-</div> -->
-
-<div class="flex  " style="text-align:center">
-    <!-- <h1>Real-Time Face Detection</h1> -->
+<!-- <div class="flex  " style="text-align:center">
     <video class="box" #video width="400" height="400" autoplay muted></video>
+  </div> -->
 
-    <!-- <video class="" #video style="width: 200px; height: 200px; float: left;" autoplay muted></video> -->
+  <div>
+    <label for="camera">Select Camera:</label>
+    <select id="camera" (change)="onCameraChange($event)">
+      <option  *ngFor="let device of videoDevices" [value]="device.deviceId">{{ device.label }}</option>
+    </select>
   </div>
+  
+  <video #video width="400" height="400" autoplay muted></video>
+  <canvas #canvas></canvas>
+  
   
